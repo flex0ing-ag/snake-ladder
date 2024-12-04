@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 100vh;
+    background-color: #0d1117; 
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreBox, #hiscoreBox {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffcc00;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
+}
+
+#scoreBox {
+    right: 220px;
+}
+
+#hiscoreBox {
+    right: 180px;
+    top: 60px; 
+}
+
+#board {
+    width: 90vmin;
+    height: 90vmin;
+    border: 3px solid #00ff00;
+    margin: 20px auto;
+    background: linear-gradient(145deg, #1e1e2e, #121212);
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    box-shadow: 0 0 10px #00ff00, inset 0 0 8px #00ff00;
+    border-radius: 10px;
+}
+
+/* Snake Head with Subtle Glow Effect */
+.head {
+    background: linear-gradient(45deg, #ff7f50, #ff6347);
+    border: 2px solid #ff4500;
+    border-radius: 50%; 
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.8);
+}
+
+
+.snake {
+    background-color: #00ff00; /* Bright green body */
+    border: 1px solid #008000;
+    border-radius: 25%; /* Rounded rectangle for body */
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); /* Reduced glow */
+}
+
+.food {
+    background: radial-gradient(circle, #ff007f, #ff0040); /* Pink to red gradient */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 0, 127, 0.6); /* Subtle glow */
+}
+
+.treat {
+    background-color: #ff69b4; /* Pink color for treat */
+    border: 2px solid #ff1493; /* Darker pink border */
+    border-radius: 50%; /* Circular shape */
+    width: 80%;
+    height: 80%;
+    animation: pulse 1s infinite; /* Pulsing animation */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.snake, .head, .food{
+    transition: all 0.2s ease-in-out;
+}
+
+/* Subtle Glow for the Score Boxes */
+#scoreBox, #hiscoreBox {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+    }
+    to {
+        text-shadow: 0 0 12px #ffcc00, 0 0 16px #ffcc00;
+    }
+}
+
+
