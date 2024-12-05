@@ -18,6 +18,10 @@ A fun and interactive web-based Snake Game where you control the snake to collec
 5. Try to beat your high score!
 
 ## How to Run the Game  
+Click here to play : [Snake Saga]( https://flex0ing-ag.github.io/snake-saga/)
+
+OR
+
 1. Download or clone this repository.  
 2. Open `index.html` in any modern web browser.  
 3. Play and enjoy the game!
