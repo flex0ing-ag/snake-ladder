@@ -6,7 +6,7 @@ const moveSound = new Audio('../assets/music/move.mp3');
 const musicSound = new Audio('../assets/music/music.mp3');
 const hiscoreBox = document.getElementById('hiscoreBox');
 const scoreBox = document.getElementById('scoreBox'); // Added reference to score box
-let speed = 8;
+let speed = 7;
 let lastPaintTime = 0;
 let score = 0;
 let hiscoreval = 0;
@@ -21,6 +21,14 @@ let treatActive = false;
 
 
 // Game functions
+function updateSpeed() {
+    // if (score % 5 === 0 && score !== 0) { // Increase speed every 5 points
+    //     speed += 1;
+    // }
+
+    speed += 1;
+}
+
 function main(ctime) {
     window.requestAnimationFrame(main);
     if ((ctime - lastPaintTime) / 1000 < 1 / speed) return;
@@ -44,6 +52,7 @@ function gameEngine() {
         alert("Game over! Press any key to play again!");
         snakeArr = [{ x: 13, y: 15 }];
         score = 0;
+        speed = 7;
         scoreBox.innerHTML = "Score: " + score;
         return;
     }
@@ -52,10 +61,12 @@ function gameEngine() {
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
         foodSound.play();
         score += 1;
+        //updateSpeed();
         if (score > hiscoreval) {
             hiscoreval = score;
             localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
             hiscoreBox.innerHTML = "High Score: " + hiscoreval;
+            updateSpeed();
         }
         scoreBox.innerHTML = "Score: " + score;
         snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
@@ -106,6 +117,8 @@ function gameEngine() {
         treatElement.classList.add('treat');
         board.appendChild(treatElement);
     }
+
+
 }
 
 function spawnTreat() {
