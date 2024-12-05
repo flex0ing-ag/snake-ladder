@@ -9,8 +9,6 @@
 
 .body {
     min-height: 100vh;
-    /* background: url("../assets/images/bg2.jpg");
-    background-repeat: no-repeat; */
     background-color: #0d1117; 
     color: white;
     font-family: 'Press Start 2P', cursive;
@@ -43,9 +41,7 @@
     height: 90vmin;
     border: 3px solid #00ff00;
     margin: 20px auto;
-    /* background: linear-gradient(145deg, #1e1e2e, #121212); */
-    background: url('../assets/images/grid.jpg');
-    background-repeat: no-repeat;
+    background: linear-gradient(145deg, #1e1e2e, #121212);
     display: grid;
     grid-template-columns: repeat(18, 1fr);
     grid-template-rows: repeat(18, 1fr);
