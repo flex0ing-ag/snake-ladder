@@ -26,17 +26,23 @@ OR
 2. Open `index.html` in any modern web browser.  
 3. Play and enjoy the game!
 
-## File Structure  
-/assets/ - Contains sound files for the game
-index.html - Main HTML file for the game
-style.css - Stylesheet for game design
-app.js - JavaScript file containing game logic
-README.md - This README file
-
 ## Technologies Used  
-- HTML  
+- HTML 
 - CSS  
-- JavaScript  
+- JavaScript
+
+## Contributing to Snake-Sage
+I'm open to contributions! Feel free to fork the repo, make changes, and send a pull request.
+
+1. Fork the repo
+2. Clone your fork:  
+   `git clone https://github.com/flex0ing-ag/snake-saga.git`
+3. Create a branch:  
+   `git checkout -b your-feature`
+4. Commit and push your changes
+5. Open a pull request
+
+Let's collaborate!
 
 ## License  
 This project is open-source and available under the MIT License.
